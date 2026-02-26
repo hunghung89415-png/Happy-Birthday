@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🎂</title>
+
+<style>
+
+/* ===== BODY CENTER ===== */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+}
+
+/* ===== RECTANGLE BOX ===== */
+.rectangle {
+    width: 650px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+    background: #fff5e6;
+    border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ===== TEXT STYLE ===== */
+.rectangle h2 {
+    font-size: 28px;
+    color: #b30059; /* dark green */
+}
+
+.rectangle p {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1b5e20; /* deeper green */
+}
+
+/* ===== IMAGE STYLE ===== */
+.rectangle img {
+    width: 180px;
+    border-radius: 20px;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.rectangle a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #2e7d32;
+    color: white;
+    text-decoration: none;   /* remove underline */
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.rectangle a:hover {
+    background-color: #1b5e20;
+    transform: scale(1.1);
+}
+
+/* ===== HEART ANIMATION ===== */
+.heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 24px;
+    animation: rise 6s linear infinite;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="rectangle">
+    <h2>This is For Uuu 💚</h2>
+    <img src="babydede.jpg" alt="Baby Yoon Yati Htun">
+    <p>I have made this for you as a Birthday Present 🎁🦕</p>
+    <p>To know more <a href="popup.html"> Tap Here</a></p>
+</div>
+
+<!-- Floating Hearts -->
+<div class="heart" style="left:10%;">💚</div>
+<div class="heart" style="left:30%; animation-delay:1s;">✨</div>
+<div class="heart" style="left:50%; animation-delay:2s;">🍀</div>
+<div class="heart" style="left:70%; animation-delay:3s;">🌸</div>
+<div class="heart" style="left:90%; animation-delay:4s;">🦕</div>
+
+</body>
+</html>

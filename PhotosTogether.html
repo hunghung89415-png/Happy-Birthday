@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Gallery 💚</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    text-align: center;
+    padding: 40px;
+}
+
+/* Title */
+h1 {
+    color: #b30059;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+/* Container for memory cards */
+.memory-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Memory card style */
+.memory-card {
+    background: #fff5e6; /* cream rectangle for contrast */
+    width: 250px;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+/* Regular images and videos */
+.memory-card img,
+.memory-card video {
+    width: 100%;
+    height: 250px; /* taller than before */
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Special video (last one) */
+.memory-card.special video {
+    width: 100%;
+    height: 350px; /* bigger than others */
+}
+
+/* Text inside card */
+.memory-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #b30059;
+    text-align: center;
+}
+
+/* Back button */
+a.back-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a.back-button:hover {
+    background: #1b5e20;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Our Memories 💚</h1>
+
+<div class="memory-container">
+
+    <!-- Photo 1 -->
+    <div class="memory-card">
+        <img src="P1.jpg" alt="Memory 1">
+        <p>Photo 1 🌿</p>
+    </div>
+
+    <!-- Video 1 -->
+    <div class="memory-card">
+        <video controls>
+            <source src="V1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Video 1 🎬</p>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="memory-card">
+        <img src="P2.jpg" alt="Memory 2">
+        <p>Photo 2 🌸</p>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="memory-card">
+        <video controls>
+            <source src="V2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Video 2 🎞️</p>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="memory-card">
+        <img src="P3.jpg" alt="Memory 3">
+        <p>Photo 3 ✨</p>
+    </div>
+
+
+    <!-- Photo 4 -->
+    <div class="memory-card">
+        <img src="P4.jpg" alt="Memory 4">
+        <p>Photo 4 💌</p>
+    </div>
+
+    <!-- Photo 5 -->
+    <div class="memory-card">
+        <img src="P5.jpg" alt="Memory 5">
+        <p>Photo 5 🐾</p>
+    </div>
+
+    <!-- Photo 6 -->
+    <div class="memory-card">
+        <img src="P6.jpg" alt="Memory 5">
+        <p>Photo 6 🐾</p>
+    </div>
+
+    <div class="memory-card special">
+        <video controls>
+            <source src="V3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Special Video 🎥</p>
+    </div>
+
+</div>
+
+<a class="back-button" href="CardHidden.html">⬅ Back to Birthday Page</a>
+
+</body>
+</html>

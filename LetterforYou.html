@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letter Surprise ✉️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Envelope container */
+.envelope-container {
+    position: relative;
+    width: 700px; /* bigger envelope */
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Envelope body */
+.envelope {
+    width: 100%;
+    height: 450px; /* taller envelope */
+    background: #fffaf0;
+    border: 3px solid #b30059;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s;
+}
+
+/* Envelope flap */
+.flap {
+    width: 100%;
+    height: 180px; /* bigger flap */
+    background: #ffcccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top;
+    transition: transform 0.6s;
+    border-bottom: 3px solid #b30059;
+}
+
+/* Click indicator arrow */
+.indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    color: #b30059;
+    animation: bounce 1s infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, -45%); }
+}
+
+/* Letter inside envelope */
+.letter {
+    position: absolute;
+    top: 450px; /* starts hidden below envelope */
+    left: 0;
+    width: 100%;
+    height: 450px; 
+    min-height: 400px; /* ensures enough space */
+    background: #fff5e6;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    padding: 40px 30px;
+    box-sizing: border-box;
+    color: #333;
+    text-align: justify;
+    transition: top 0.8s ease;
+    font-size: 18px;
+    overflow-y: auto;
+}
+
+/* Sticker */
+.sticker {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 60px; /* bigger sticker */
+}
+
+/* Heading inside letter */
+.letter h2 {
+    text-align: center;
+    color: #b30059;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+/* Back button */
+.letter a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 18px 30px; /* bigger padding */
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 20px; /* bigger text */
+    transition: 0.3s;
+}
+
+.letter a:hover {
+    background: #1b5e20;
+}
+
+/* Envelope open animation */
+.envelope.open .flap {
+    transform: rotateX(-180deg);
+}
+
+.envelope.open .letter {
+    top: 0;
+}
+
+.envelope.open .indicator {
+    display: none; /* hide indicator when open */
+}
+</style>
+</head>
+<body>
+
+<div class="envelope-container" onclick="openEnvelope()">
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+        <!-- Click indicator -->
+        <div class="indicator">Tap the Envelope ⬇️</div>
+
+        <div class="letter">
+            <div class="sticker">💖</div>
+            <h2>Hello Nerd</h2>
+            <p>
+                Just wanted to say how awesome you are 💖 <br> 
+                I love laughing, dreaming, and making memories with you. <br>
+                Keep shining, being silly, and staying amazing 🌸✨
+            </p>
+            <p>
+                Happy Birthday! 🐾💛
+            </p>
+            <a href="CardHidden.html">⬅ Back to Memories</a>
+        </div>
+    </div>
+</div>
+
+<script>
+function openEnvelope() {
+    const envelope = document.getElementById('envelope');
+    envelope.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

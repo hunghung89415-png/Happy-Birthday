@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Whispers in the Wild 🐾</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: 'Georgia', serif;
+    color:white;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+/* Floating animals */
+.animal{
+    position:absolute;
+    font-size:28px;
+    cursor:pointer;
+    animation: float 5s infinite ease-in-out;
+    opacity:0.9;
+    transition:0.3s;
+}
+
+.animal:hover{
+    transform:scale(1.3);
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-25px);}
+    100%{transform:translateY(0);}
+}
+
+/* Text style */
+.line{
+    opacity:0;
+    transform:translateY(20px);
+    transition:1s ease;
+    font-size:20px;
+    letter-spacing:1px;
+    margin:8px;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Final message */
+.final{
+    margin-top:25px;
+    font-size:26px;
+    opacity:0;
+    transition:2s ease;
+    text-shadow:0 0 15px rgba(255,255,255,0.7);
+}
+
+.final.show{
+    opacity:1;
+}
+
+.final a {
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.final a:hover {
+    background:#1b5e20;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Tap the creatures to reveal the messages I give you 🐾</h2>
+
+<!-- Messages -->
+<div id="text1" class="line">We must go to EXO Concerts together 🎶💖</div>
+<div id="text2" class="line">Silly-willy like a little dino but grogeously cute 🦖</div>
+<div id="text3" class="line">You are braver than you know 🦁💪</div>
+<div id="text4" class="line">Rare like something the world only gets once☁️💫</div>
+<div id="text5" class="line">Eat all the ice cream and sweets we want 🍦😋</div>
+<div id="text6" class="line">Try new things, chase dreams, and never doubt how incredible you are 🌈✨</div>
+<div id="text7" class="line">Today is all about you shining, laughing, and feeling loved 🫶🌸</div>
+<div id="text8" class="line">Cheer for every little victory, because you deserve the world 🏆🌟</div>
+<div id="text9" class="line">Sparkling like a magical unicorn 🌸🦄</div>
+
+<!-- Final message with Back link -->
+<div id="finalMessage" class="final">
+  <p>Happy Birthday 🐾✨<br>
+  You are magic in every form.</p>
+  <a href="CardHidden.html">⬅ Back to Memories</a>
+</div>
+
+<!-- Floating Animals -->
+<div class="animal" style="top:20%; left:15%;" onclick="reveal()">🦖</div>
+<div class="animal" style="top:65%; left:80%;" onclick="reveal()">🐱</div>
+<div class="animal" style="top:75%; left:30%;" onclick="reveal()">🦁</div>
+<div class="animal" style="top:3%; left:70%;" onclick="reveal()">🐰</div>
+<div class="animal" style="top:3%; left:30%;" onclick="reveal()">🐼</div>
+<div class="animal" style="top:50%; left:10%;" onclick="reveal()">🦊</div>
+<div class="animal" style="top:80%; left:60%;" onclick="reveal()">🐢</div>
+<div class="animal" style="top:40%; left:75%;" onclick="reveal()">🐿️</div>
+<div class="animal" style="top:55%; left:35%;" onclick="reveal()">🦄</div>
+
+<script>
+let count = 0;
+
+function reveal(){
+    count++;
+
+    if(count == 1){ document.getElementById("text1").classList.add("show"); }
+    else if(count == 2){ document.getElementById("text2").classList.add("show"); }
+    else if(count == 3){ document.getElementById("text3").classList.add("show"); }
+    else if(count == 4){ document.getElementById("text4").classList.add("show"); }
+    else if(count == 5){ document.getElementById("text5").classList.add("show"); }
+    else if(count == 6){ document.getElementById("text6").classList.add("show"); }
+    else if(count == 7){ document.getElementById("text7").classList.add("show"); }
+    else if(count == 8){ document.getElementById("text8").classList.add("show"); }
+    else if(count == 9){ document.getElementById("text9").classList.add("show"); }
+    else if(count == 10){ document.getElementById("finalMessage").classList.add("show"); }
+}
+</script>
+
+</body>
+</html>
