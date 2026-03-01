@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Your Special Gift 💚</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: white;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+.gift-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.gift-card {
+    background: white;
+    width: 270px;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.gift-card:hover {
+    transform: translateY(-12px);
+}
+
+.gift-card img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.gift-card h3 {
+    margin-top: 15px;
+    color: #6a1b9a;
+}
+
+.hidden {
+    display: none;
+}
+
+.big-selected {
+    transform: scale(1.35);
+}
+
+#message {
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="mainTitle">Choose One Special Gift 🎁</h1>
+<p class="subtitle" id="subTitle">Only ONE chance... choose carefully 💚</p>
+
+<div class="gift-container">
+
+    <div class="gift-card" onclick="chooseGift(this, 'home')">
+        <img src="Item1.png">
+        <h3>Item 1</h3>
+    </div>
+
+    <div class="gift-card" onclick="chooseGift(this, 'coupon')">
+        <img src="Item2.png">
+        <h3>Item 2</h3>
+    </div>
+
+    <div class="gift-card" onclick="chooseGift(this, 'blindbox')">
+        <img src="Item3.png">
+        <h3>Item 3</h3>
+    </div>
+
+</div>
+
+<div id="message"></div>
+
+<script>
+
+let chosen = false;
+
+function chooseGift(card, type) {
+    if (chosen) return;
+    chosen = true;
+
+    // Hide title and subtitle
+    document.getElementById("mainTitle").style.display = "none";
+    document.getElementById("subTitle").style.display = "none";
+
+    // Hide other cards
+    document.querySelectorAll(".gift-card").forEach(c => {
+        if (c !== card) {
+            c.classList.add("hidden");
+        }
+    });
+
+    // Enlarge selected card
+    card.classList.add("big-selected");
+
+    let message = "";
+    let newImage = "";
+    let newTitle = "";
+
+    if (type === "home") {
+        newImage = "homecloth.png";  
+        newTitle = "Home Clothes 👕💚";
+        message = "You unlocked comfy Home Clothes! Warm and cozy just for you 💚<br>Screenshot and send it to me!";
+    } 
+    else if (type === "coupon") {
+        newImage = "coupon.png";  
+        newTitle = "Coupon Card 🎟️✨";
+        message = "You unlocked a 25,000 MMK Coupon! Shopping time 😌✨<br>Screenshot and send it to me!";
+    } 
+    else if (type === "blindbox") {
+        newImage = "blindbox.png";  
+        newTitle = "Blind Box Opened 🎁👀";
+        message = "Surprise! Cute toys are inside the Blind Box 💚✨<br>Screenshot and send it to me!";
+    }
+
+    // Change image and title
+    card.querySelector("img").src = newImage;
+    card.querySelector("h3").innerText = newTitle;
+
+    // Show message
+    document.getElementById("message").innerHTML = message;
+}
+
+</script>
