@@ -88,7 +88,7 @@ h1 {
         <h3>Item 1</h3>
     </div>
 
-    <div class="gift-card" onclick="chooseGift(this, 'coupon')">
+    <div class="gift-card" onclick="chooseGift(this, 'phonecase')">
         <img src="Item2.png">
         <h3>Item 2</h3>
     </div>
@@ -133,10 +133,11 @@ function chooseGift(card, type) {
         newTitle = "Home Clothes 👕💚";
         message = "You unlocked comfy Home Clothes! Warm and cozy just for you 💚<br>Screenshot and send it to me!";
     } 
-    else if (type === "coupon") {
-        newImage = "coupon.png";  
-        newTitle = "Coupon Card 🎟️✨";
-        message = "You unlocked a 25,000 MMK Coupon! Shopping time 😌✨<br>Screenshot and send it to me!";
+    else if (type === "phonecase") {
+    newImage = "phonecase.png";  
+    newTitle = "Phone Case Gift 📱💚";
+    message = "You unlocked a brand new phone case! 😍✨<br>Screenshot and send it to me!";
+
     } 
     else if (type === "blindbox") {
         newImage = "blindbox.png";  
